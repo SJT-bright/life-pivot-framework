@@ -1,0 +1,45 @@
+appId: com.lifepivot.personal-library
+productName: 个人积累库
+asar: true
+directories:
+  output: 发布包/桌面版
+files:
+  - desktop/electron/main.cjs
+  - desktop/electron/preload.cjs
+  - desktop/electron/runtime.cjs
+  - package.json
+extraResources:
+  - from: desktop/build/server
+    to: app-server
+  - from: desktop/runtime/node
+    to: node
+    filter:
+      - node
+      - node.exe
+      - NODE-LICENSE.txt
+      - runtime.json
+win:
+  target:
+    - target: nsis
+      arch:
+        - x64
+  artifactName: 个人积累库-${version}-Windows-${arch}.${ext}
+mac:
+  category: public.app-category.productivity
+  icon: desktop/assets/app-icon-1024.png
+  target:
+    - target: dmg
+      arch:
+        - arm64
+        - x64
+  artifactName: 个人积累库-${version}-macOS-${arch}.${ext}
+dmg:
+  title: 个人积累库 ${version}
+nsis:
+  oneClick: false
+  perMachine: false
+  allowToChangeInstallationDirectory: true
+  createDesktopShortcut: true
+  createStartMenuShortcut: true
+  runAfterFinish: true
+  deleteAppDataOnUninstall: false

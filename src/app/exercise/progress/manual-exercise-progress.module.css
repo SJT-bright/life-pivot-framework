@@ -1,0 +1,401 @@
+.workspace,
+.section,
+.cardList,
+.factList {
+  display: grid;
+  gap: 1rem;
+}
+
+.workspace {
+  gap: 1.15rem;
+  color: #18231e;
+}
+
+.summary {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.68);
+  border-radius: 1rem;
+  background: rgba(244, 249, 246, 0.82);
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.94),
+    0 18px 48px rgba(18, 41, 32, 0.14);
+  backdrop-filter: blur(26px) saturate(126%);
+  -webkit-backdrop-filter: blur(26px) saturate(126%);
+}
+
+.summary > div {
+  display: grid;
+  gap: 0.22rem;
+  min-width: 0;
+  padding: 1rem 1.1rem;
+  border-right: 1px solid rgba(36, 73, 60, 0.12);
+}
+
+.summary > div:last-child {
+  border-right: 0;
+}
+
+.summary strong {
+  color: #24493c;
+  font-size: clamp(1.65rem, 4vw, 2.4rem);
+  font-variant-numeric: tabular-nums;
+  font-weight: 680;
+  letter-spacing: -0.04em;
+  line-height: 1;
+}
+
+.summary span,
+.sectionHeader > p,
+.explanation,
+.factList span {
+  color: #58665f;
+  font-weight: 450;
+  line-height: 1.55;
+}
+
+.notice,
+.empty,
+.section {
+  padding: clamp(1rem, 2.4vw, 1.35rem);
+  border: 1px solid rgba(255, 255, 255, 0.68);
+  border-radius: 1rem;
+  background: rgba(244, 249, 246, 0.84);
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.94),
+    0 20px 54px rgba(18, 41, 32, 0.14);
+  backdrop-filter: blur(28px) saturate(126%);
+  -webkit-backdrop-filter: blur(28px) saturate(126%);
+}
+
+.notice {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  border-color: rgba(139, 92, 12, 0.34);
+  background: rgba(255, 249, 232, 0.92);
+}
+
+.notice p,
+.sectionHeader h2,
+.sectionHeader p,
+.explanation,
+.emptyLine {
+  margin: 0;
+}
+
+.notice button,
+.empty button,
+.moreButton {
+  min-height: 2.75rem;
+  border-color: #1d4034;
+  border-radius: 0.68rem;
+  background: #24493c;
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.18),
+    0 8px 18px rgba(22, 55, 44, 0.2);
+  color: #fff;
+  font-weight: 700;
+  transition:
+    background-color 160ms ease,
+    transform 120ms ease;
+}
+
+.notice button:hover,
+.empty button:hover,
+.moreButton:hover {
+  background: #2b5647;
+}
+
+.notice button:active,
+.empty button:active,
+.moreButton:active {
+  background: #18382e;
+  transform: scale(0.985);
+}
+
+.notice button:focus-visible,
+.empty button:focus-visible,
+.moreButton:focus-visible {
+  outline: 3px solid rgba(36, 73, 60, 0.28);
+  outline-offset: 2px;
+}
+
+.sectionHeader {
+  display: flex;
+  align-items: end;
+  justify-content: space-between;
+  gap: 1.5rem;
+  padding-bottom: 0.9rem;
+  border-bottom: 1px solid rgba(36, 73, 60, 0.12);
+}
+
+.sectionHeader h2 {
+  color: #24493c;
+  font-size: clamp(1.25rem, 2.4vw, 1.65rem);
+  letter-spacing: -0.025em;
+}
+
+.sectionHeader > p {
+  max-width: 34rem;
+  text-align: right;
+}
+
+.eyebrow {
+  margin: 0 0 0.24rem;
+  color: #4f645a;
+  font-size: 0.86rem;
+  font-weight: 700;
+  letter-spacing: 0.025em;
+}
+
+.columns {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1rem;
+  align-items: start;
+}
+
+.cardList {
+  gap: 0.75rem;
+}
+
+.factList {
+  gap: 0;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.factList li {
+  display: grid;
+  gap: 0.7rem;
+  padding: 0.9rem 0;
+  border-bottom: 1px solid rgba(36, 73, 60, 0.12);
+}
+
+.factList li:first-child {
+  padding-top: 0.15rem;
+}
+
+.factList li:last-child {
+  padding-bottom: 0.15rem;
+  border-bottom: 0;
+}
+
+.factList li > div:first-child {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.8rem;
+}
+
+.factList dl {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 0;
+  margin: 0;
+  overflow: hidden;
+  border: 1px solid rgba(36, 73, 60, 0.12);
+  border-radius: 0.68rem;
+  background: rgba(255, 255, 255, 0.56);
+}
+
+.factList dl > div {
+  display: grid;
+  gap: 0.1rem;
+  padding: 0.6rem;
+  border-right: 1px solid rgba(36, 73, 60, 0.1);
+}
+
+.factList dl > div:last-child {
+  border-right: 0;
+}
+
+.factList dt {
+  color: #59675f;
+  font-size: 0.84rem;
+  font-weight: 500;
+}
+
+.factList dd {
+  margin: 0;
+  color: #24493c;
+  font-variant-numeric: tabular-nums;
+  font-weight: 700;
+}
+
+.empty {
+  display: grid;
+  gap: 0.85rem;
+}
+
+.empty h2,
+.empty p {
+  margin: 0;
+}
+
+.empty button {
+  justify-self: start;
+}
+
+.emptyLine {
+  padding: 0.75rem 0 0.25rem;
+  color: #65716b;
+}
+
+.moreButton {
+  justify-self: center;
+  padding: 0.48rem 1.05rem;
+}
+
+.scheduledSection {
+  border-color: rgba(139, 92, 12, 0.3);
+  background: rgba(255, 249, 232, 0.9);
+}
+
+@media (max-width: 820px) {
+  .summary {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .summary > div:nth-child(2) {
+    border-right: 0;
+  }
+
+  .summary > div:nth-child(-n + 2) {
+    border-bottom: 1px solid rgba(36, 73, 60, 0.12);
+  }
+
+  .columns {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 560px) {
+  .sectionHeader,
+  .notice,
+  .factList li > div:first-child {
+    align-items: stretch;
+    flex-direction: column;
+  }
+
+  .sectionHeader > p {
+    text-align: left;
+  }
+
+  .notice button {
+    width: 100%;
+  }
+
+  .factList dl {
+    grid-template-columns: 1fr;
+  }
+
+  .factList dl > div {
+    border-right: 0;
+    border-bottom: 1px solid rgba(36, 73, 60, 0.1);
+  }
+
+  .factList dl > div:last-child {
+    border-bottom: 0;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .notice button,
+  .empty button,
+  .moreButton {
+    transition-duration: 0.01ms;
+  }
+}
+
+@media (prefers-reduced-transparency: reduce) {
+  .summary,
+  .notice,
+  .empty,
+  .section {
+    background: #f4f8f6;
+    backdrop-filter: none;
+    -webkit-backdrop-filter: none;
+  }
+
+  .scheduledSection {
+    background: #fff8e8;
+  }
+}
+
+@media (prefers-contrast: more) {
+  .summary,
+  .notice,
+  .empty,
+  .section,
+  .factList dl {
+    border-color: currentColor;
+  }
+}
+
+:global(html[data-theme="dark"]) .workspace {
+  color: var(--ink);
+}
+
+:global(html[data-theme="dark"]) :is(.summary, .empty, .section) {
+  border-color: var(--theme-glass-border);
+  color: var(--ink);
+  background: var(--theme-panel);
+  box-shadow: var(--theme-shadow);
+}
+
+:global(html[data-theme="dark"]) .summary > div,
+:global(html[data-theme="dark"]) .sectionHeader,
+:global(html[data-theme="dark"]) .factList li,
+:global(html[data-theme="dark"]) .factList dl,
+:global(html[data-theme="dark"]) .factList dl > div {
+  border-color: var(--theme-divider);
+}
+
+:global(html[data-theme="dark"]) :is(.summary strong, .sectionHeader h2, .factList dd) {
+  color: var(--brand-deep);
+}
+
+:global(html[data-theme="dark"]) :is(
+  .summary span,
+  .sectionHeader > p,
+  .explanation,
+  .factList span,
+  .factList dt,
+  .eyebrow,
+  .emptyLine
+) {
+  color: var(--ink-muted);
+}
+
+:global(html[data-theme="dark"]) .factList dl {
+  background: var(--theme-panel-inner);
+}
+
+:global(html[data-theme="dark"]) :is(.notice, .scheduledSection) {
+  border-color: rgb(239 209 138 / 0.28);
+  color: #f3d89a;
+  background: rgb(61 49 27 / 0.72);
+  box-shadow: inset 0 1px 0 rgb(255 241 204 / 0.1);
+}
+
+:global(html[data-theme="dark"]) :is(.notice button, .empty button, .moreButton) {
+  border-color: color-mix(in srgb, var(--brand-lift) 36%, transparent);
+  color: #f6fff9;
+  background: var(--btn-gradient);
+  box-shadow: var(--shadow-btn);
+}
+
+:global(html[data-theme="dark"]) :is(.notice button, .empty button, .moreButton):hover {
+  background: var(--btn-gradient-hover);
+}
+
+@media (prefers-reduced-transparency: reduce) {
+  :global(html[data-theme="dark"]) :is(.summary, .empty, .section) {
+    background: var(--theme-panel-strong);
+  }
+}

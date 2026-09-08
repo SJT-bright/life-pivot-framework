@@ -1,0 +1,60 @@
+{
+  "name": "life-pivot-system",
+  "version": "0.23.1",
+  "private": true,
+  "type": "module",
+  "main": "desktop/electron/main.cjs",
+  "scripts": {
+    "dev": "next dev --hostname 127.0.0.1",
+    "build": "next build --webpack",
+    "start": "next start --hostname 127.0.0.1",
+    "typecheck": "tsc --noEmit",
+    "test": "vitest",
+    "test:run": "vitest run",
+    "test:e2e": "node scripts/run-playwright.mjs",
+    "test:perf": "vitest run --config vitest.perf.config.ts --reporter=verbose",
+    "desktop:prepare-runtime": "node desktop/scripts/prepare-node-runtime.mjs",
+    "desktop:stage": "npm run build && npm run desktop:prepare-runtime && node desktop/scripts/stage-server.mjs",
+    "desktop:stage:win:x64": "npm run build && node desktop/scripts/prepare-node-runtime.mjs --target=win32-x64 && node desktop/scripts/stage-server.mjs --target=win32-x64",
+    "desktop:stage:mac:arm64": "npm run build && node desktop/scripts/prepare-node-runtime.mjs --target=darwin-arm64 && node desktop/scripts/stage-server.mjs --target=darwin-arm64",
+    "desktop:stage:mac:x64": "npm run build && node desktop/scripts/prepare-node-runtime.mjs --target=darwin-x64 && node desktop/scripts/stage-server.mjs --target=darwin-x64",
+    "desktop:run": "npm run desktop:stage && electron .",
+    "desktop:pack": "npm run desktop:pack:win",
+    "desktop:dist": "npm run desktop:dist:win",
+    "desktop:pack:win": "npm run desktop:stage:win:x64 && electron-builder --win dir --x64",
+    "desktop:dist:win": "npm run desktop:stage:win:x64 && electron-builder --win nsis --x64",
+    "desktop:pack:mac:arm64": "npm run desktop:stage:mac:arm64 && electron-builder --mac dir --arm64",
+    "desktop:dist:mac:arm64": "npm run desktop:stage:mac:arm64 && electron-builder --mac dmg --arm64",
+    "desktop:pack:mac:x64": "npm run desktop:stage:mac:x64 && electron-builder --mac dir --x64",
+    "desktop:dist:mac:x64": "npm run desktop:stage:mac:x64 && electron-builder --mac dmg --x64"
+  },
+  "engines": {
+    "node": ">=24.0.0"
+  },
+  "dependencies": {
+    "better-sqlite3": "^13.0.3",
+    "drizzle-orm": "^0.45.2",
+    "next": "^16.3.0",
+    "react": "^19.2.8",
+    "react-dom": "^19.2.8",
+    "zod": "^4.4.3"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.62.1",
+    "@testing-library/jest-dom": "^7.0.0",
+    "@testing-library/react": "^16.3.2",
+    "@testing-library/user-event": "^14.6.3",
+    "@types/better-sqlite3": "^9.6.0",
+    "@types/node": "^26.2.0",
+    "@types/react": "^19.2.18",
+    "@types/react-dom": "^19.2.4",
+    "@vitejs/plugin-react": "^6.0.5",
+    "electron": "42.9.3",
+    "electron-builder": "26.15.3",
+    "eslint": "^9.39.5",
+    "eslint-config-next": "^16.3.0",
+    "jsdom": "^30.0.1",
+    "typescript": "^6.0.3",
+    "vitest": "^4.1.10"
+  }
+}

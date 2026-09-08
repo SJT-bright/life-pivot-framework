@@ -1,0 +1,29 @@
+{
+  "version": "apple-glass-v1",
+  "format": "16:10 landscape PNG",
+  "cover": {
+    "title": "个人积累库",
+    "file": "cover.png"
+  },
+  "routes": {
+    "/today": { "title": "今日", "file": "today.png" },
+    "/goals": { "title": "目标与行动", "file": "goals.png" },
+    "/knowledge": { "title": "知识体系", "file": "knowledge.png" },
+    "/wisdom": { "title": "提醒", "file": "wisdom.png" },
+    "/reading": { "title": "读书", "file": "reading.png" },
+    "/exercise": { "title": "运动健身", "file": "exercise.png" },
+    "/sleep": { "title": "睡眠记录", "file": "sleep.png" },
+    "/skincare": { "title": "护肤记录", "file": "skincare.png" },
+    "/health": { "title": "健康清单", "file": "health.png" },
+    "/daily-review": { "title": "每日复盘", "file": "daily-review.png" },
+    "/review-map": { "title": "复盘地图", "file": "review-map.png" },
+    "/review": { "title": "周回顾", "file": "weekly-review.png" },
+    "/settings/data": { "title": "数据与设置", "file": "settings.png" }
+  },
+  "promptDocuments": [
+    "core-prompts.md",
+    "growth-prompts.md",
+    "wellness-prompts.md",
+    "reflection-prompts.md"
+  ]
+}

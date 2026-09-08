@@ -1,0 +1,9 @@
+{
+  "appName": "个人积累库",
+  "host": "127.0.0.1",
+  "port": 3216,
+  "healthPath": "/api/v1/health",
+  "dataRootEnvironmentVariable": "LIFE_OS_DATA_ROOT",
+  "controlRootEnvironmentVariable": "LIFE_OS_CONTROL_ROOT",
+  "runtimeDirectoryName": "desktop-runtime"
+}

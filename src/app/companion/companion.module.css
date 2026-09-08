@@ -1,0 +1,269 @@
+.page {
+  position: relative;
+}
+
+.page .rail {
+  position: absolute;
+  z-index: 8;
+  top: 50%;
+  right: 0;
+  display: grid;
+  width: 44px;
+  height: 160px;
+  grid-template-rows: 112px 4px 44px;
+  overflow: visible;
+  border: 1px solid rgb(255 255 255 / 0.55);
+  border-right: 0;
+  border-radius: 14px 0 0 14px;
+  background: rgb(232 246 238 / 0.42);
+  -webkit-backdrop-filter: blur(20px) saturate(1.45);
+  backdrop-filter: blur(20px) saturate(1.45);
+  box-shadow:
+    -8px 10px 28px rgb(27 55 45 / 0.2),
+    inset 0 1px 0 rgb(255 255 255 / 0.9);
+  transform: translateY(-50%);
+  transition:
+    background-color 160ms ease,
+    box-shadow 160ms ease;
+}
+
+.page .rail:hover {
+  background: rgb(249 252 250 / 0.96);
+  box-shadow:
+    -10px 12px 32px rgb(27 55 45 / 0.23),
+    inset 0 1px 0 rgb(255 255 255 / 0.95);
+}
+
+.page .railTab,
+.page .railTab:hover,
+.page .railTab:active {
+  position: relative;
+  top: auto;
+  right: auto;
+  grid-row: 1;
+  width: 44px;
+  height: 112px;
+  padding: 9px 6px 4px;
+  gap: 6px;
+  border: 0;
+  border-radius: 14px 0 0;
+  background: transparent;
+  -webkit-backdrop-filter: none;
+  backdrop-filter: none;
+  box-shadow: none;
+  transform: none;
+  filter: none;
+}
+
+.page .dragHandle,
+.page .dragHandle:hover,
+.page .dragHandle:active {
+  position: relative;
+  z-index: 1;
+  top: auto;
+  right: auto;
+  display: grid;
+  grid-row: 3;
+  width: 44px;
+  height: 44px;
+  min-height: 44px;
+  padding: 0;
+  place-items: center;
+  overflow: visible;
+  border: 0;
+  border-radius: 14px;
+  color: rgb(42 74 62 / 0.86);
+  background: transparent;
+  box-shadow: none;
+  text-shadow: none;
+  cursor: ns-resize;
+  touch-action: none;
+  transform: none;
+  filter: none;
+  user-select: none;
+}
+
+.page .dragHandle::before {
+  position: absolute;
+  width: 32px;
+  height: 20px;
+  border: 1px solid rgb(255 255 255 / 0.5);
+  border-radius: 10px;
+  background: rgb(255 255 255 / 0.32);
+  box-shadow:
+    0 3px 10px rgb(22 52 41 / 0.17),
+    inset 0 1px 0 rgb(255 255 255 / 0.94);
+  content: "";
+}
+
+.page .dragHandle:hover::before {
+  border-color: rgb(255 255 255 / 0.98);
+  background: rgb(252 254 253 / 0.97);
+  box-shadow:
+    0 4px 13px rgb(22 52 41 / 0.2),
+    inset 0 1px 0 #fff;
+}
+
+.page .dragHandle:hover {
+  color: rgb(30 69 54 / 0.96);
+}
+
+.page .dragHandle:active::before {
+  background: rgb(228 240 233 / 0.96);
+  box-shadow: inset 0 1px 4px rgb(22 52 41 / 0.18);
+}
+
+.page .dragHandle:focus-visible {
+  outline: 0 !important;
+  box-shadow: inset 0 0 0 2px rgb(28 81 59 / 0.92) !important;
+}
+
+.page .dragGrip,
+.page .dragGrip::before,
+.page .dragGrip::after {
+  display: block;
+  width: 13px;
+  height: 1px;
+  border-radius: 1px;
+  background: currentColor;
+}
+
+.page .dragGrip {
+  position: relative;
+  z-index: 1;
+}
+
+.page .dragGrip::before,
+.page .dragGrip::after {
+  position: absolute;
+  left: 0;
+  content: "";
+}
+
+.page .dragGrip::before {
+  top: -4px;
+}
+
+.page .dragGrip::after {
+  top: 4px;
+}
+
+:global(html[data-theme="dark"]) .page .rail {
+  border-color: rgb(226 246 235 / 0.22);
+  background: rgb(14 23 19 / 0.94);
+  box-shadow:
+    -10px 14px 34px rgb(0 5 3 / 0.52),
+    inset 0 1px 0 rgb(239 255 247 / 0.16);
+}
+
+:global(html[data-theme="dark"]) .page .rail:hover {
+  background: rgb(19 31 25 / 0.97);
+  box-shadow:
+    -12px 16px 38px rgb(0 5 3 / 0.58),
+    inset 0 1px 0 rgb(239 255 247 / 0.2);
+}
+
+:global(html[data-theme="dark"]) .page .railTab,
+:global(html[data-theme="dark"]) .page .railTab:hover,
+:global(html[data-theme="dark"]) .page .railTab:active {
+  color: #e8f6ef;
+}
+
+:global(html[data-theme="dark"]) .page .dragHandle,
+:global(html[data-theme="dark"]) .page .dragHandle:hover,
+:global(html[data-theme="dark"]) .page .dragHandle:active {
+  color: #c9ead9;
+}
+
+:global(html[data-theme="dark"]) .page .dragHandle::before {
+  border-color: rgb(224 246 234 / 0.24);
+  background: rgb(35 52 44 / 0.96);
+  box-shadow:
+    0 4px 12px rgb(0 5 3 / 0.38),
+    inset 0 1px 0 rgb(241 255 248 / 0.14);
+}
+
+:global(html[data-theme="dark"]) .page .dragHandle:hover::before {
+  border-color: rgb(226 249 237 / 0.36);
+  background: rgb(43 65 54 / 0.98);
+  box-shadow:
+    0 5px 14px rgb(0 5 3 / 0.46),
+    inset 0 1px 0 rgb(241 255 248 / 0.18);
+}
+
+:global(html[data-theme="dark"]) .page .dragHandle:active::before {
+  background: rgb(27 43 36 / 0.99);
+  box-shadow: inset 0 1px 5px rgb(0 4 2 / 0.54);
+}
+
+:global(html[data-theme="dark"]) .page .dragHandle:focus-visible {
+  box-shadow: inset 0 0 0 2px #bcebd4 !important;
+}
+
+@media (prefers-reduced-transparency: reduce) {
+  .page .rail,
+  .page .rail:hover {
+    background: #f4f8f5;
+    -webkit-backdrop-filter: none;
+    backdrop-filter: none;
+  }
+
+  .page .dragHandle::before,
+  .page .dragHandle:hover::before,
+  .page .dragHandle:active::before {
+    background: #f4f8f5;
+  }
+
+  :global(html[data-theme="dark"]) .page .rail,
+  :global(html[data-theme="dark"]) .page .rail:hover {
+    background: #101c17;
+  }
+
+  :global(html[data-theme="dark"]) .page .dragHandle::before,
+  :global(html[data-theme="dark"]) .page .dragHandle:hover::before,
+  :global(html[data-theme="dark"]) .page .dragHandle:active::before {
+    background: #263b31;
+  }
+}
+
+@media (prefers-contrast: more) {
+  .page .rail,
+  .page .rail:hover {
+    border-color: #173b2e;
+    background: #fff;
+  }
+
+  .page .dragHandle {
+    color: #102d23;
+  }
+
+  .page .dragHandle::before,
+  .page .dragHandle:hover::before,
+  .page .dragHandle:active::before {
+    border-color: #173b2e;
+    background: #fff;
+  }
+
+  :global(html[data-theme="dark"]) .page .rail,
+  :global(html[data-theme="dark"]) .page .rail:hover {
+    border-color: #e7f8ef;
+    background: #050c09;
+  }
+
+  :global(html[data-theme="dark"]) .page .dragHandle {
+    color: #eafff4;
+  }
+
+  :global(html[data-theme="dark"]) .page .dragHandle::before,
+  :global(html[data-theme="dark"]) .page .dragHandle:hover::before,
+  :global(html[data-theme="dark"]) .page .dragHandle:active::before {
+    border-color: #e7f8ef;
+    background: #16271f;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .page .rail {
+    transition: none;
+  }
+}

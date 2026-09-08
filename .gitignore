@@ -1,0 +1,49 @@
+# Local agent/design artifacts
+.impeccable/
+.worktrees/
+.codex/
+.superpowers/
+.mimosa/
+
+# Node and Next.js
+node_modules/
+.next/
+out/
+coverage/
+playwright-report/
+test-results/
+*.tsbuildinfo
+.pnpm-store/
+
+# Generated desktop runtime and package output
+desktop/build/
+desktop/runtime/node-win-x64/
+desktop/runtime/node/
+发布包/
+
+# Local runtime data must never enter source control
+.data/
+*.sqlite
+*.sqlite-shm
+*.sqlite-wal
+
+# Local environment files
+.env
+.env.local
+.env.*
+!.env.example
+!.env.*.example
+
+# Local verification images may contain personal records
+docs/verification/*.png
+docs/verification/*.jpg
+docs/verification/*.webp
+
+# Patch-tool backup artifacts
+*.orig
+*.rej
+
+# Temporary files and logs
+tmp/
+*.log
+.DS_Store

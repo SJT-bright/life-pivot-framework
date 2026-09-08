@@ -1,0 +1,15 @@
+export const PRIMARY_NAV_ITEMS = [
+  { href: "/today", label: "今日" },
+  { href: "/goals", label: "目标与行动" },
+  { href: "/knowledge", label: "知识体系" },
+  { href: "/wisdom", label: "提醒" },
+  { href: "/reading", label: "读书" },
+  { href: "/exercise", label: "运动健身" },
+  { href: "/sleep", label: "睡眠记录" },
+  { href: "/skincare", label: "护肤记录" },
+  { href: "/health", label: "健康清单" },
+  { href: "/daily-review", label: "每日复盘" },
+  { href: "/review-map", label: "复盘地图" },
+  { href: "/review", label: "周回顾" },
+  { href: "/stats", label: "成长统计" },
+] as const;

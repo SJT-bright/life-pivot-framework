@@ -1,0 +1,226 @@
+.header {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(18rem, 0.44fr);
+  gap: clamp(1.25rem, 3vw, 2.4rem);
+  align-items: end;
+  padding: clamp(1rem, 2.5vw, 1.55rem);
+  border: 1px solid rgba(255, 255, 255, 0.7);
+  border-radius: 1.05rem;
+  background: rgba(244, 249, 246, 0.8);
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.94),
+    0 22px 60px rgba(17, 40, 31, 0.16),
+    0 3px 12px rgba(17, 40, 31, 0.08);
+  color: #18231e;
+  backdrop-filter: blur(28px) saturate(128%);
+  -webkit-backdrop-filter: blur(28px) saturate(128%);
+}
+
+.header h1 {
+  margin: 0.12rem 0 0.45rem;
+  color: #18382e;
+  font-size: clamp(1.55rem, 3.4vw, 2.25rem);
+  letter-spacing: -0.035em;
+  line-height: 1.15;
+}
+
+.header p {
+  max-width: 66ch;
+  margin-top: 0;
+}
+
+.header p:last-child {
+  margin-bottom: 0;
+}
+
+.controls {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: 0.65rem;
+  align-items: end;
+  padding-left: clamp(1rem, 2.5vw, 1.5rem);
+  border-left: 1px solid rgba(36, 73, 60, 0.14);
+}
+
+.controls label {
+  display: grid;
+  gap: 0.38rem;
+  color: #30483e;
+  font-size: 0.93rem;
+  font-weight: 650;
+}
+
+.controls input,
+.controls button {
+  min-height: 2.75rem;
+}
+
+.controls input {
+  min-width: 0;
+  padding: 0.58rem 0.68rem;
+  border: 1px solid rgba(36, 73, 60, 0.23);
+  border-radius: 0.7rem;
+  background: rgba(255, 255, 255, 0.94);
+  box-shadow: inset 0 1px 2px rgba(23, 50, 40, 0.06);
+  color: #18231e;
+}
+
+.controls input:focus {
+  border-color: #24493c;
+  outline: none;
+  box-shadow: 0 0 0 4px rgba(36, 73, 60, 0.28);
+}
+
+.controls button {
+  border-color: #1d4034;
+  border-radius: 0.7rem;
+  background: #24493c;
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.18),
+    0 8px 18px rgba(22, 55, 44, 0.22);
+  color: #fff;
+  font-weight: 700;
+  transition:
+    background-color 160ms ease,
+    transform 120ms ease;
+}
+
+.controls button:hover {
+  background: #2b5647;
+}
+
+.controls button:active {
+  background: #18382e;
+  transform: scale(0.985);
+}
+
+.controls button:focus-visible {
+  outline: 3px solid rgba(36, 73, 60, 0.28);
+  outline-offset: 2px;
+}
+
+.todayLink {
+  grid-column: 1 / -1;
+  justify-self: end;
+}
+
+@media (max-width: 760px) {
+  .header,
+  .controls {
+    grid-template-columns: 1fr;
+  }
+
+  .header {
+    align-items: stretch;
+  }
+
+  .controls {
+    padding-top: 1rem;
+    padding-left: 0;
+    border-top: 1px solid rgba(36, 73, 60, 0.14);
+    border-left: 0;
+  }
+
+  .todayLink {
+    grid-column: auto;
+    justify-self: start;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .controls button {
+    transition-duration: 0.01ms;
+  }
+}
+
+@media (prefers-reduced-transparency: reduce) {
+  .header {
+    background: #f4f8f6;
+    backdrop-filter: none;
+    -webkit-backdrop-filter: none;
+  }
+}
+
+@media (prefers-contrast: more) {
+  .header,
+  .controls input,
+  .controls button {
+    border-color: currentColor;
+  }
+}
+
+/* The exercise shell participates in the same smoked-glass night material. */
+:global(html[data-theme="dark"]) .header {
+  border-color: var(--theme-glass-border);
+  color: var(--ink);
+  background: var(--theme-panel);
+  box-shadow: var(--theme-shadow);
+}
+
+:global(html[data-theme="dark"]) .header h1 {
+  color: var(--ink);
+}
+
+:global(html[data-theme="dark"]) .controls {
+  border-color: var(--theme-divider);
+}
+
+:global(html[data-theme="dark"]) .controls label {
+  color: var(--ink-soft);
+}
+
+:global(html[data-theme="dark"]) .controls input {
+  border-color: var(--theme-divider);
+  color: var(--ink);
+  background: var(--theme-control);
+  box-shadow: inset 0 1px 2px rgb(0 8 4 / 0.28);
+}
+
+:global(html[data-theme="dark"]) .controls input:hover,
+:global(html[data-theme="dark"]) .controls input:focus {
+  border-color: var(--brand-lift);
+  background: var(--theme-control-hover);
+}
+
+:global(html[data-theme="dark"]) .controls input:focus {
+  box-shadow: 0 0 0 4px color-mix(in srgb, var(--brand-lift) 24%, transparent);
+}
+
+:global(html[data-theme="dark"]) .controls button {
+  border-color: color-mix(in srgb, var(--brand-lift) 36%, transparent);
+  color: #f6fff9;
+  background: var(--btn-gradient);
+  box-shadow: var(--shadow-btn);
+}
+
+:global(html[data-theme="dark"]) .controls button:hover {
+  background: var(--btn-gradient-hover);
+  box-shadow: var(--shadow-btn-hover);
+}
+
+@media (prefers-reduced-transparency: reduce) {
+  :global(html[data-theme="dark"]) .header {
+    background: var(--theme-panel-strong);
+  }
+}
+
+.historyPager {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  margin-top: 14px;
+  color: var(--ink-soft, #46554e);
+  font-size: 14px;
+}
+
+.historyPager a {
+  display: inline-flex;
+  align-items: center;
+  min-height: 40px;
+  padding: 4px 16px;
+  border: 1px solid rgba(255, 255, 255, 0.8);
+  border-radius: 999px;
+  background: rgba(249, 251, 248, 0.7);
+  font-weight: 600;
+}
